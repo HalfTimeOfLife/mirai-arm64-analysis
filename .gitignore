@@ -1,0 +1,14 @@
+# Never commit the raw sample
+samples/*
+!samples/README.md
+!samples/hashes.txt
+
+# Large network captures / sandbox logs
+dynamic-analysis/network-captures/*.pcap
+dynamic-analysis/sandbox-logs/*.log
+
+# Misc
+.DS_Store
+Thumbs.db
+*.i64
+*.idb

