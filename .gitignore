@@ -12,3 +12,6 @@ dynamic-analysis/sandbox-logs/*.log
 Thumbs.db
 *.i64
 *.idb
+
+# env
+.venv/
