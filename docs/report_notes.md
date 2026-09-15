@@ -122,15 +122,15 @@ watchdog
 
 - `strings -n 6 sample.elf > static-analysis\strings\strings_ascii.txt`
 
-Find the result of this command in the file [static-analysis\strings\strings_ascii.txt](../static-analysis\strings\strings_ascii.txt).
+Find the result of this command in the file [static-analysis\strings\strings_ascii.txt](../static-analysis/strings/strings_ascii.txt).
 
 - `strings -n 6 -e l sample.elf > static-analysis\strings\strings_utf16le.txt`
 
-Find the result of this command in the file [static-analysis\strings\strings_utf16le.txt](../static-analysis\strings\strings_utf16le.txt).
+Find the result of this command in the file [static-analysis\strings\strings_utf16le.txt](../static-analysis/strings/strings_utf16le.txt).
 
 - `aarch64-linux-gnu-objdump -d -j .text samples/6c36aaf.../6c36aaf....elf > static-analysis/disasm/objdump_text.txt`
 
-Find the result of this command in the file [static-analysis\disasm\objdump_text.txt](../static-analysis\disasm\objdump_text.txt).
+Find the result of this command in the file [static-analysis\disasm\objdump_text.txt](../static-analysis/disasm/objdump_text.txt).
 
 ## 2. Deep static analysis
 
