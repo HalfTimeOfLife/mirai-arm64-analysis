@@ -456,7 +456,8 @@ The relevant fallback calls are:
 - **`binary_ip_to_string()`:** `0x0040a9f0`
 - **`free_addrinfo_list()`:** `0x0040a55c`
 
-On successful address preparation, the resulting IPv4 address is stored in the destination address structure, and the state machine jump to the label `RESOLUTION_SUCCESS` previously named `LAB_0040046c`:
+On successful resolution, execution falls through to `STATE4_CHECK` (`LAB_00400440`).
+Since `CONNECTION_STATE` was just set to `2`, the `if (CONNECTION_STATE == 4)` guard is false and control returns to the dispatcher:
 
 ```c
 RESOLUTION_SUCCESS:
@@ -464,9 +465,9 @@ RESOLUTION_SUCCESS:
   uVar7 = get_current_time_seconds(0);
   uStack_20 = (undefined6)uVar7;
   uStack_1a = (undefined2)((ulong)uVar7 >> 0x30);
-LAB_00400440:
+STATE4_CHECK:
   if ((uint)CONNECTION_STATE == 4) {
-LAB_00400448:
+CMD_SOCKET_MONITOR_ENTRY:
     return_code_preparation_ipv4 = FUN_00405580(&socket_fd);
     if (return_code_preparation_ipv4 == -1) {
       CONNECTION_STATE._0_4_ = 5;
@@ -476,6 +477,8 @@ LAB_00400448:
 ```
 
 As the `CONNECTION_STATE` was set to `2`, we go back to the dispatcher which make us branch to the second state.
+
+On successful resolution, execution falls through to `STATE4_CHECK`. Since `CONNECTION_STATE` was just set to `2`, the `if (CONNECTION_STATE == 4)` guard is false and control returns to the dispatcher.
 
 If address preparation fails, the state machine transitions to state 5, which handles connection failure and retry preparation.
 
@@ -583,11 +586,18 @@ send_result = sendto_wrapper_stub(
 - Call site: `0x004003cc`
 - Function: `0x0040d370` and `0x0040d494`
 
-The return value is then checked to determine whether the transmission was successful. If it is, the `CONNECTION_STATE` is set to `4` and we enter (through a `goto`) State 4.
+The return value is then checked to determine whether the transmission was successful. If it is, `CONNECTION_STATE` is set to `4` and execution jumps to `STATE4_CHECK`. Since the guard is now true, control falls directly into `CMD_SOCKET_MONITOR_ENTRY` without returning to the dispatcher:
 
-If it isn't, the malware decrements the remaining transmission attempt counter and waits one second before retrying. If all three attempts fail, the loop terminates and execution proceeds to the connection failure handling logic.
+```c
+CONNECTION_STATE._0_4_ = 4;
+goto STATE4_CHECK;
+```
+
+If the send fails, the malware decrements the remaining transmission attempt counter and waits one second before retrying. If all three attempts fail, the loop terminates and execution proceeds to the connection failure handling logic.
 
 ##### 2.2.5.4 State 4: Command socket monitoring and processing
+
+When the dispatcher sees `CONNECTION_STATE == 4`, it jumps directly to `CMD_SOCKET_MONITOR_ENTRY` (`LAB_00400448`), bypassing `STATE4_CHECK`. `CMD_SOCKET_MONITOR_ENTRY` is therefore reachable via two paths: the dispatcher on subsequent iterations, and `STATE4_CHECK` on the first entry from State 3.
 
 Once the connection reaches State 4, the malware monitors the established command socket using `ppoll()`. It periodically sends a four-byte `PING` message and waits for incoming data or socket events.
 
@@ -790,9 +800,71 @@ LAB_00405b70:
 - Call site: `0x004058c0` (`process_command`)
 - Function: `0x0041044c` (`FUN_0041044c`)
 
+`monitor_command_socket()` returns `-1` to signal a connection error or unexpected disconnection, at which point the state machine transitions to State 5:
+
+```c
+return_code = monitor_command_socket(&socket_fd);
+if (return_code == -1) {
+    CONNECTION_STATE._0_4_ = 5;
+}
+goto STATE_MACHINE_DISPATCHER;
+```
+
+As long as the function returns successfully, execution loops back to the dispatcher and State 4 is re-entered, keeping the bot in a persistent listening loop.
+
 ##### 2.2.5.5 State 5: Socket cleanup and retry preparation
 
+State 5 is entered via `goto LAB_0040029c`, here renamed `SOCKET_TEARDOWN_RETRY_PREP`. It handles socket teardown and prepares the next reconnection attempt.
+
+If the socket is still open, it is shut down and closed:
+
+```c
+if (socket_fd != -1) {
+    FUN_0040d4f0(socket_fd, 2); // shutdown(socket_fd, SHUT_RDWR)
+    close_wrapper(socket_fd);
+    socket_fd = -1;
+}
+```
+
+The retry counter is then incremented, and a randomized backoff duration is computed.
+The jitter prevents synchronized reconnection storms (thundering herd):
+
+| `retry_counter` | Formula | Range |
+|---|---|---|
+| < 4 | `rand() % 2 + 2` | [2, 3] s |
+| [4, 10] | `rand() % 8 + 15` | [15, 22] s |
+| [11, 20] | `rand() % 31 + 60` | [60, 90] s |
+| ≥ 21 | `rand() % 151 + 300` | [300, 450] s |
+
+The computed duration is stored in `CONNECTION_STATE._4_4_` and the state transitions to 6.
+
 ##### 2.2.5.6 State 6: Retry delay
+
+State 6 has no explicit `goto` label in the dispatcher. It is reached by fall-through from the `if ((uint)CONNECTION_STATE == 6)` branch. Inside the loop, `LAB_00400320` marks the reconnection path that bypasses hostname re-resolution; it is here renamed `RECONNECT_SKIP_RESOLUTION`.
+
+In this state, the malware sleeps for the duration computed in State 5:
+
+```c
+sleep_for_duration(CONNECTION_STATE._4_4_);
+```
+
+After waking, the next state depends on `retry_counter`:
+
+- If `retry_counter < 11`: transition directly to State 2 (socket creation), reusing the cached IP.
+- If `retry_counter ≥ 11`: check time elapsed since the last successful hostname resolution.
+  If less than 601 seconds, transition to State 2. Otherwise, transition to State 1 (re-resolve the C2 hostname).
+
+```c
+if (retry_counter < 0xb) goto RECONNECT_SKIP_RESOLUTION;
+elapsed = get_current_time_seconds(0) - last_resolution_timestamp;
+if (elapsed < 0x259) goto RECONNECT_SKIP_RESOLUTION;
+// else: SET_STATE_PREPARING_ADDRESS → State 1
+
+RECONNECT_SKIP_RESOLUTION:
+    CONNECTION_STATE._0_4_ = 2; // → State 2
+```
+
+This avoids redundant DNS resolution on transient disconnections while ensuring the cached C2 address is refreshed after extended failure periods (~10 minutes).
 
 ## 3. Dynamic analysis
 
