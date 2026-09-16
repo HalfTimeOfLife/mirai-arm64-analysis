@@ -1,4 +1,4 @@
-# gafgyt-arm64-analysis
+# mirai-arm64-analysis
 
 Analysis of an ELF/ARM64 sample from the Mirai family.
 
