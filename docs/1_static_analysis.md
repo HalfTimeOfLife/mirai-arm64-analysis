@@ -26,7 +26,7 @@ The detected patterns correspond to standard AES lookup tables:
 
 The presence of these tables suggests that the binary contains a native AES implementation. The exact purpose of this implementation was investigated further during the reverse-engineering phase.
 
-![Crypto findings](../images/ghidramat_panel_findings_crypto.PNG)
+![Crypto findings](images/ghidramat_panel_findings_crypto.PNG)
 
 ### 1.1.2 Anti-VM findings
 
@@ -35,7 +35,7 @@ GhidraMAT also reported two potential anti-VM techniques. However, only one of t
 - **`VMWare`:** Valid string-based finding. The string can also be found in [static-analysis/strings/strings_ascii.txt](../static-analysis/strings/strings_ascii.txt).
 - **`rdtsc_timing`:** Invalid finding. It is based on the byte sequence `0f 31`, which corresponds to the `RDTSC` instruction on x86. Since the analyzed sample targets ARM64/AArch64, this instruction cannot be used here.
 
-![Anti-VM findings](../images/ghidramat_panel_findings_anti_vm.PNG)
+![Anti-VM findings](images/ghidramat_panel_findings_anti_vm.PNG)
 
 ## 1.2 Entry Point
 
@@ -71,7 +71,7 @@ The malware uses a file-based locking mechanism involving `/tmp/.bot_lock`:
   }
 ```
 
-![File lock](../images/file_lock.PNG)
+![File lock](images/file_lock.PNG)
 
 The file is first removed, then opened or created. The program attempts to acquire a file lock using `flock()`.
 
@@ -95,7 +95,8 @@ lVar8 = decrypt_with_hex_key(
 
 Briefly, this function first calls another function to convert the 32-character hexadecimal string into 16 bytes. These 16 bytes are then used as an AES-128 key to decrypt the second hexadecimal string.
 
-> This function is described in detail in the [poc/decrypt_with_hex_key/](../../poc/decrypt_with_hex_key/) folder.
+> PoC: This function is reproduced in the [poc/decrypt_with_hex_key/](../poc/decrypt_with_hex_key/) folder.
+
 
 The decrypted value in this case is:
 
@@ -530,7 +531,7 @@ For attack commands, the function identifies the requested attack type by compar
 
 Each command is mapped to an integer attack type ranging from 0 to 6. The selected type is later used to retrieve the corresponding attack handler from the attack-handler table.
 
-> PoC: the command protocol (prefixes, `attack_command_type` values, and the associated attack functions) is reproduced in [`poc/command-dispatch/`](../../poc/command-dispatch/README.md) as two Python scripts, one playing the malware client and one playing the C2 server.
+> PoC: the command protocol (prefixes, `attack_command_type` values, and the associated attack functions) is reproduced in [`poc/command-dispatch/`](../poc/command-dispatch/README.md) as two Python scripts, one playing the malware client and one playing the C2 server.
 
 The command format depends on the attack type. ICMP and GRE commands use the following general format:
 
