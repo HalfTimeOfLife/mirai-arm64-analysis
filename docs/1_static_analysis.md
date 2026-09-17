@@ -531,7 +531,7 @@ For attack commands, the function identifies the requested attack type by compar
 
 Each command is mapped to an integer attack type ranging from 0 to 6. The selected type is later used to retrieve the corresponding attack handler from the attack-handler table.
 
-> PoC: the command protocol (prefixes, `attack_command_type` values, and the associated attack functions) is reproduced in [`poc/command-dispatch/`](../poc/command-dispatch/README.md) as two Python scripts, one playing the malware client and one playing the C2 server.
+> PoC: the command protocol (prefixes, `attack_command_type` values, and the associated attack functions) is reproduced in the [`poc/command-dispatch/`](../poc/command-dispatch/) folder, as two Python scripts, one playing the malware client and one playing the C2 server.
 
 The command format depends on the attack type. ICMP and GRE commands use the following general format:
 
