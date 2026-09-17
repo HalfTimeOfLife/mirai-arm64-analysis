@@ -20,16 +20,6 @@ Static reverse engineering of the malware, including the main execution flow, st
 
 ---
 
-## Analysis Notes
-
-**MEANT TO DISAPEAR**
-
-This file only concatenate all the file you find at the root of `docs/`
-
-- [Analysis notes](notes/report_notes.md)
-
----
-
 ## Images
 
 Screenshots and visual artifacts produced during the analysis.
@@ -48,5 +38,3 @@ Screenshots and visual artifacts produced during the analysis.
 | [0. Triage and Basic Analysis](0_triage_and_basic_analysis.md) | Initial sample identification and basic static analysis |
 | [1. Static Analysis](1_static_analysis.md) | Static reverse engineering and malware behavior analysis |
 | [Images](#images) | Screenshots and visual artifacts |
-
----
