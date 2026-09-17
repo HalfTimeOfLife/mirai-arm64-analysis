@@ -15,3 +15,6 @@ Thumbs.db
 
 # env
 .venv/
+
+# Personal notes, not meant for publication
+docs/notes/
